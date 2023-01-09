@@ -5,24 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple HTML HomePage</title>
+  <title>Online Boutique</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-
+<script>
+  function send(){
+    alert("message sent")
+  }
+</script>
 <body>
   <header class="header">
-    <a href="#" class="logo">Developer</a>
+    <a href="#" class="logo">Group 1</a>
     <nav class="nav-items">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="./index.jsp">Home</a>
+      <a href="./clothing.jsp">Clothing</a>
+      <a href="./cosmetics.jsp">Cosmetics</a>
+      <a href="#sendForm">Contact Us</a>
     </nav>
   </header>
   <main>
     <div class="intro">
       <h1>Online Boutique</h1>
       <p>A single page to find wide collection of fashion</p>
-      <button>Learn More</button>
     </div>
     <div class="achievements">
       <div class="work">
@@ -35,11 +39,6 @@
         <p class="work-heading">Cosmetics</p>
         <p class="work-text"> Utimate collection of cosmetics suitable for all age groups</p>
       </div>
-      <div class="work">
-        <i class="fas fa-ethernet"></i>
-        <p class="work-heading">Network</p>
-        <p class="work-text">Spanned across globle with finger tips of delivery</p>
-      </div>
     </div>
     <div class="about-me">
       <div class="about-me-text">
@@ -48,16 +47,32 @@
       </div>
       <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80" alt="me">
     </div>
+
+    <div class="container" id="sendForm">
+      <form onsubmit="send();">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    
+        <input type="submit" value="Submit">
+      </form>
+    </div>
   </main>
   <footer class="footer">
     <div class="copy">© 2023 Online Boutique</div>
     <div class="bottom-links">
-      <div class="links">
-        <span>More Info</span>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
       <div class="links">
         <span>Social Links</span>
         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -69,9 +84,43 @@
 </body>
 <style>@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 /* CSS for header */
@@ -112,7 +161,7 @@ body {
   align-items: center;
   width: 100%;
   height: 520px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
